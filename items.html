@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+
+#in_div{
+     
+    width: 400px;
+    height: 500px;
+    border: 3px solid greenyellow;
+    text-align: center;
+    background-color: aqua;
+    display: inline-block;
+    margin: 40px;
+    border-radius: 10px;
+    /* overflow: scroll; */
+}
+img{
+  width: 100px;
+  height: 100px;
+  border: 2px solid tomato;
+}
+</style>
+
+</head>
+<body>
+    
+
+    <script>
+
+let data= JSON.parse(localStorage.getItem("details"))
+
+console.log(data);
+
+
+
+    
+
+         let di1=document.createElement("div");
+         di1.setAttribute("id","in_div")
+
+         let id=document.createElement("h3")   
+         let h3_cr=document.createElement("h3");
+         let p_cr=document.createElement("p");
+         let b_1=document.createElement("h4"); 
+         let span=document.createElement("span")
+         let b_2=document.createElement("b");
+         let br_2=document.createElement("br");
+         let bold1=document.createElement("b")
+         let sp_1=document.createElement("span");
+         let break1=document.createElement("br");
+         let bold2=document.createElement("b")
+         let sp_2=document.createElement("span");
+         let break2=document.createElement("br")
+         let im=document.createElement("img");
+         
+
+
+         im.setAttribute("src", data["image"]);
+
+         id.innerText=data["id"];
+         h3_cr.innerText=data["title"];
+         p_cr.innerText=data["description"];
+         b_1.innerText=data["category"];
+         span.innerText="price :-"
+         b_2.innerText=data["price"];
+         bold1.innerText="count :-"
+         sp_1.innerText=data["rating"]["count"]
+        bold2.innerText="rate :-"
+         sp_2.innerText=data["rating"]["rate"]
+        
+
+
+        
+        
+        
+         di1.append(id,h3_cr,p_cr,b_1,span, b_2, br_2,bold1,sp_1,break1,bold2,sp_2,break2,im);
+
+         document.body.append(di1);
+    
+
+        
+    </script>
+</body>
+</html> 
